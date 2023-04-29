@@ -1,1 +1,16 @@
-<p>consulta-saldo works!</p>
+<section>
+  <h1>
+    Consulta saldo
+  </h1>
+  <header>
+    <div class="atenuado">
+      Último login: {{cliente.ultimoLogin | date: 'medium':'GMT-03'}}
+    </div>
+    <div>
+      <b>Cliente</b>: {{cliente.nome | uppercase}}
+    </div>
+    <div>
+      <b>Saldo</b>: {{cliente.saldo | currency: 'BRL'}}
+    </div>
+  </header>
+</section>
