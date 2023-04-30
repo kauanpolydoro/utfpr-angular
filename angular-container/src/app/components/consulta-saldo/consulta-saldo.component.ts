@@ -24,9 +24,9 @@ export class ConsultaSaldoComponent implements OnInit {
    * Retorna a classe CSS de acordo com o valor do saldo
    * @param valor Valor do saldo
    * @returns Classe CSS
-   * @example classNamePorFavor(1) // "positivo"
-   * @example classNamePorFavor(-1) // "negativo"
-   * @example classNamePorFavor(0) // "zero"
+   * * `zero` se o valor for entre -0.005 e 0.005
+   * * `positivo` se o valor for maior ou igual a 0.005
+   * * `negativo` se o valor for menor ou igual a -0.005
    */
   public classNamePorValor(valor: number): "positivo" | "negativo" | "zero" {
 
