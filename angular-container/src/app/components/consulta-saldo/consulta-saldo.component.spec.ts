@@ -1,6 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Pipe, PipeTransform } from '@angular/core';
 
 import { ConsultaSaldoComponent } from './consulta-saldo.component';
+
+
+@Pipe({
+  name: 'classNamePorValor'
+})
+export class ClassNamePorValorPipeMock implements PipeTransform {
+  public transform(value: any, ...args: any[]) {
+    return '';
+  }
+}
 
 describe('ConsultaSaldoComponent', () => {
   let component: ConsultaSaldoComponent;
@@ -8,7 +19,10 @@ describe('ConsultaSaldoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConsultaSaldoComponent ]
+      declarations: [
+        ConsultaSaldoComponent,
+        ClassNamePorValorPipeMock,
+      ]
     })
     .compileComponents();
   });
@@ -21,35 +35,6 @@ describe('ConsultaSaldoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  describe('classNamePorValor', () => {
-
-    it('should return "positivo" when value is greater or equal than 0.005', () => {
-      expect(component.classNamePorValor(0.005)).toBe("positivo");
-      expect(component.classNamePorValor(1)).toBe("positivo");
-
-      expect(component.classNamePorValor(0.004)).not.toBe("positivo");
-      expect(component.classNamePorValor(-1)).not.toBe("positivo");
-    });
-
-    it('should return "negativo" when value is less or equal than -0.005', () => {
-      expect(component.classNamePorValor(-0.005)).toBe("negativo");
-      expect(component.classNamePorValor(-1)).toBe("negativo");
-
-      expect(component.classNamePorValor(0.004)).not.toBe("negativo");
-      expect(component.classNamePorValor(1)).not.toBe("negativo");
-    });
-
-    it('should return "zero" when value is between -0.005 and 0.005', () => {
-      expect(component.classNamePorValor(0)).toBe("zero");
-      expect(component.classNamePorValor(-0.004)).toBe("zero");
-      expect(component.classNamePorValor(0.004)).toBe("zero");
-
-      expect(component.classNamePorValor(0.005)).not.toBe("zero");
-      expect(component.classNamePorValor(-0.005)).not.toBe("zero");
-    });
-
   });
 
 });

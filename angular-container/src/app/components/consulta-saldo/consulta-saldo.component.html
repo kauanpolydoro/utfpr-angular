@@ -25,13 +25,13 @@
     </div>
     <div>
       <b>Saldo</b>:
-      <span [className]="classNamePorValor(cliente.saldo)">
+      <span [className]="cliente.saldo | classNamePorValor">
         {{cliente.saldo | currency: 'BRL'}}
       </span>
     </div>
     <div *ngIf="cliente.creditoPreAprovado">
       <b>Crédito pré-aprovado</b>:
-      <span [className]="classNamePorValor(cliente.creditoPreAprovado)">
+      <span [className]="cliente.creditoPreAprovado | classNamePorValor">
         {{cliente.creditoPreAprovado | currency: 'BRL'}}
       </span>
     </div>
