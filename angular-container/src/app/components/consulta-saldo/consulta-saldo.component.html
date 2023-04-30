@@ -2,38 +2,5 @@
   <h1>
     Consulta saldo
   </h1>
-  <picture>
-    <source
-      [srcset]="'https://i.pravatar.cc/75?img=' + cliente.id"
-      media="(max-width: 599px)"
-    >
-    <source
-      [srcset]="'https://i.pravatar.cc/120?img=' + cliente.id"
-      media="(max-width: 899px)"
-    >
-    <img
-      [src]="'https://i.pravatar.cc/160?img=' + cliente.id"
-      alt="Foto de perfil de {{cliente.nome}}"
-    >
-  </picture>
-  <header>
-    <div class="atenuado">
-      Último login: {{cliente.ultimoLogin | date: 'medium':'GMT-03'}}
-    </div>
-    <div>
-      <b>Cliente</b>: {{cliente.nome | uppercase}}
-    </div>
-    <div>
-      <b>Saldo</b>:
-      <span [className]="cliente.saldo | classNamePorValor">
-        {{cliente.saldo | currency: 'BRL'}}
-      </span>
-    </div>
-    <div *ngIf="cliente.creditoPreAprovado">
-      <b>Crédito pré-aprovado</b>:
-      <span [className]="cliente.creditoPreAprovado | classNamePorValor">
-        {{cliente.creditoPreAprovado | currency: 'BRL'}}
-      </span>
-    </div>
-  </header>
+  <app-card-client [cliente]="jhon"></app-card-client>
 </section>

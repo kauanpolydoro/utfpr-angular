@@ -1,5 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+const CLASSES_PADRAO = {
+  positivo: "positivo",
+  negativo: "negativo",
+  zero: "zero",
+}
+
+export type ClassNamesDeValor = Partial<typeof CLASSES_PADRAO>;
+
 @Pipe({
   name: 'classNamePorValor'
 })
@@ -15,16 +23,17 @@ export class ClassNamePorValorPipe implements PipeTransform {
   */
   public transform(
     valor: number,
-  ): "positivo" | "negativo" | "zero" {
+    classes: ClassNamesDeValor = CLASSES_PADRAO,
+  ): string {
     if (valor >= 0.005) {
-      return "positivo"
+      return classes.positivo || "positivo"
     }
 
     if (valor <= -0.005) {
-      return "negativo"
+      return classes.negativo || "negativo"
     }
 
-    return "zero"
+    return classes.zero || "zero"
   }
 
 }

@@ -1,0 +1,33 @@
+.atenuado {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.positivo {
+  color: green;
+}
+
+.negativo {
+  color: red;
+}
+
+.credito.positivo {
+  font-weight: bold;
+}
+
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1em;
+}
+
+:host picture {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+:host header {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
