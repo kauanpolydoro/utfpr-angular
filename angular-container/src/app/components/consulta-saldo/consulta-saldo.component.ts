@@ -15,6 +15,19 @@ export class ConsultaSaldoComponent implements OnInit {
     new Date(),
   );
 
+  public marie: Cliente = new Cliente(
+    1,
+    "Marie Doe",
+    9999.99,
+    new Date(),
+  );
+
+  public clientes: Cliente[] = [
+    this.jhon,
+    this.marie,
+  ];
+  public clienteSelecionado?: Cliente;
+
   constructor() {
   }
 
