@@ -9,6 +9,7 @@ import { Cliente } from 'src/app/models/cliente';
 export class ConsultaSaldoComponent implements OnInit {
 
   public cliente: Cliente = new Cliente(
+    12,
     "Jhon Doe",
     99.99,
     new Date(),

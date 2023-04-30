@@ -2,6 +2,20 @@
   <h1>
     Consulta saldo
   </h1>
+  <picture>
+    <source
+      [srcset]="'https://i.pravatar.cc/75?img=' + cliente.id"
+      media="(max-width: 599px)"
+    >
+    <source
+      [srcset]="'https://i.pravatar.cc/120?img=' + cliente.id"
+      media="(max-width: 899px)"
+    >
+    <img
+      [src]="'https://i.pravatar.cc/160?img=' + cliente.id"
+      alt="Foto de perfil de {{cliente.nome}}"
+    >
+  </picture>
   <header>
     <div class="atenuado">
       Último login: {{cliente.ultimoLogin | date: 'medium':'GMT-03'}}

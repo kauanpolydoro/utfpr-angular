@@ -2,6 +2,10 @@ export class Cliente {
 
   constructor(
     /**
+     * Id do cliente
+     */
+    public id: number,
+    /**
      * Nome completo do cliente (nome e sobrenome)
      */
     public nome: string,
@@ -14,7 +18,8 @@ export class Cliente {
     /**
      * Data do último acesso (último login) do cliente
      */
-    public ultimoLogin: Date) {
+    public ultimoLogin: Date,
+  ) {
 
   }
 
