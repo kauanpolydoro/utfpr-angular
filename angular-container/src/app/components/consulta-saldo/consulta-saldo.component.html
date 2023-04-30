@@ -10,7 +10,10 @@
       <b>Cliente</b>: {{cliente.nome | uppercase}}
     </div>
     <div>
-      <b>Saldo</b>: {{cliente.saldo | currency: 'BRL'}}
+      <b>Saldo</b>:
+      <span [className]="classNamePorValor(cliente.saldo)">
+        {{cliente.saldo | currency: 'BRL'}}
+      </span>
     </div>
   </header>
 </section>

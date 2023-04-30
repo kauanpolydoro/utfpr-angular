@@ -14,9 +14,31 @@ export class ConsultaSaldoComponent implements OnInit {
     new Date(),
   )
 
-  constructor() { }
+  constructor() {
+  }
 
   public ngOnInit(): void {
+  }
+
+  /**
+   * Retorna a classe CSS de acordo com o valor do saldo
+   * @param valor Valor do saldo
+   * @returns Classe CSS
+   * @example classNamePorFavor(1) // "positivo"
+   * @example classNamePorFavor(-1) // "negativo"
+   * @example classNamePorFavor(0) // "zero"
+   */
+  public classNamePorValor(valor: number): "positivo" | "negativo" | "zero" {
+
+    if (valor >= 0.005) {
+      return "positivo"
+    }
+
+    if (valor <= -0.005) {
+      return "negativo"
+    }
+
+    return "zero"
   }
 
 }
