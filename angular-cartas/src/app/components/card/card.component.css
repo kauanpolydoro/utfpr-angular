@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.carta {
+  width: 100px;
+  height: 150px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+}
+
+.naipe {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2em;
+}
+
+.valor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  height: 100%;
+}
+
+.carta-paus .naipe,
+.carta-espadas .naipe {
+  color: black;
+}
+
+.carta-ouros .naipe,
+.carta-copas .naipe {
+  color: red;
+}
