@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="suit-button-container">
+    <button *ngFor="let naipe of naipes" (click)="naipeSelecionado = naipe" [className]="naipe.suit | classNamePorNaipe">
+      {{naipe.suitSymbol}}
+    </button>
+    <button class="reset-button" (click)="resetNaipeSelecionado()">Reset</button>
+    <div *ngIf="naipeSelecionado">
+      <span>
+        {{naipeSelecionado.suitSymbol}}
+      </span>
+    </div>
+  </div>
+  <app-card></app-card>
+</div>
