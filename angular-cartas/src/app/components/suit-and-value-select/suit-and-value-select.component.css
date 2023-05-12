@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.4s;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+button:hover {
+  filter: brightness(95%);
+}
+
+.suit-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+  margin-bottom: 1em;
+}
+
+.botao-naipe {
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+  margin: 0 0 1em 1em;
+  background-color: white;
+}
+
+.reset-button {
+  text-align: center;
+  font-size: 1.5em;
+
+  height: 50px;
+  width: auto;
+  margin: 0 0 1em 1em;
+
+  background-color: white;
+  color: #333;
+}
+
+.vermelho {
+  color: red;
+}
+
+.preto {
+  color: black;
+}
+
+.values-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+}
+
+.value-button {
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+  margin: 0 0 1em 1em;
+  background-color: white;
+}
+
+.selecionado {
+  background-color: green;
+  color: white;
+}
