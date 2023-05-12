@@ -20,18 +20,25 @@ export class SuitAndValueSelectComponent implements OnInit {
     this.paus
   ];
 
+  public valores: string[] = [
+    "A", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+    "J", "Q", "K"
+  ]
+
   public naipeSelecionado?: Naipe;
+  public valorSelecionado?: string;
 
   constructor() {
 
   }
 
   /**
-   * Função que reseta o naipe selecionado pelo o usuário
+   * Função que reseta os valores selecionados pelo usuário
    * @returns void
    */
-  public resetNaipeSelecionado(): void {
+  public reset(): void {
     this.naipeSelecionado = undefined;
+    this.valorSelecionado = undefined;
   }
 
   public getClass(naipe: Naipe): string {

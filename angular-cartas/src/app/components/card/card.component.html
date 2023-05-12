@@ -1,38 +1,11 @@
 <div class="container">
 
-  <div class="carta carta-paus">
+  <div [className]="'carta ' + naipeDaCarta?.color">
     <div class="naipe">
-      <span>♣</span>
+      <span>{{naipeDaCarta?.suitSymbol}}</span>
     </div>
     <div class="valor">
-      A
-    </div>
-  </div>
-
-  <div class="carta carta-espadas">
-    <div class="naipe">
-      <span>♠</span>
-    </div>
-    <div class="valor">
-      K
-    </div>
-  </div>
-
-  <div class="carta carta-ouros">
-    <div class="naipe">
-      <span>♦</span>
-    </div>
-    <div class="valor">
-      7
-    </div>
-  </div>
-
-  <div class="carta carta-copas">
-    <div class="naipe">
-      <span>♥</span>
-    </div>
-    <div class="valor">
-      K
+      {{valorDaCarta}}
     </div>
   </div>
 

@@ -27,12 +27,10 @@
   height: 100%;
 }
 
-.carta-paus .naipe,
-.carta-espadas .naipe {
+.preto {
   color: black;
 }
 
-.carta-ouros .naipe,
-.carta-copas .naipe {
+.vermelho {
   color: red;
 }
