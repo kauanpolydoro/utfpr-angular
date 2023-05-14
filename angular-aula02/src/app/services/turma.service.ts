@@ -67,7 +67,7 @@ export class TurmaService {
 
   public get(): Observable<Turma[]> {
     return of(TURMAS).pipe(
-      delay(2000),
+      delay(100),
       map((x) => x.map((iTurma) => new Turma(
         new Disciplina(iTurma.disciplina.codigo, iTurma.disciplina.nome),
         iTurma.ano,
