@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    <li>
+      <button className="category-btn" *ngFor="let categoria of categorias" (click)="selecionaCategoria(categoria)">
+        {{categoria.nome}}
+      </button>
+    </li>
+  </ul>
+</nav>
