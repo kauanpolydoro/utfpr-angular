@@ -1,0 +1,16 @@
+<main>
+  <h2 id="category-name">{{categoria.nome}}</h2>
+  <p id="category-description">{{categoria.descricao}}</p>
+  <p id="category-count">Quantidade de filmes: {{categoria.filmes.length}}</p>
+
+  <div id="movies-list">
+    <div *ngFor="let filme of categoria.filmes" class="movie">
+      <h3>{{filme.titulo}}</h3>
+      <p>Ano: {{filme.ano}}</p>
+      <p>Diretor: {{filme.diretor}}</p>
+      <p>Sinopse: {{filme.sinopse}}</p>
+      <p>Classificação: {{filme.classificacao}}</p>
+    </div>
+  </div>
+</main>
+F

@@ -1,1 +1,13 @@
+<nav>
+  <app-lista-categoria (categoriaSelecionada)="exibeCategoria($event)">
+  </app-lista-categoria>
+</nav>
+<main *ngIf="categoria; else semCategoria">
+  <app-categoria [categoria]="categoria"></app-categoria>
+</main>
+<ng-template #semCategoria>
+  <main>
+    Selecione uma categoria para exibir.
+  </main>
+</ng-template>
 <router-outlet></router-outlet>

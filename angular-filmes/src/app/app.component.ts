@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CategoriaService } from './services/categoria.service';
+import { Categoria, CategoriaDetalhes } from './models/categoria';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-filmes';
+
+  constructor(
+    public categoriaService: CategoriaService
+  ) { }
+
+  public categoria?: CategoriaDetalhes;
+
+  public exibeCategoria(categoria: Categoria): void {
+    this.categoriaService.getDetalhes(categoria.id).subscribe((categoria: CategoriaDetalhes) => {
+      this.categoria = categoria;
+    });
+  }
+
 }
