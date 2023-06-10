@@ -1,0 +1,34 @@
+<a
+  [href]="artigo.url"
+  target="_blank"
+  rel="noreferrer"
+  *ngFor="let artigo of (artigos$ | async)"
+>
+  <p-card
+    header="{{ artigo.titulo }}"
+    [style]="{width: '360px'}"
+    styleClass="p-card-shadow"
+  >
+    <ng-template pTemplate="header">
+      <img alt="{{ artigo.titulo }}" src="{{ artigo.imagem }}">
+    </ng-template>
+    <p>
+      {{ artigo.descricao }}
+    </p>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Acessar"
+        icon="pi pi-eye"
+      >
+      </p-button>
+      <p-button
+        (click)="editaArtigo(artigo, $event)"
+        label="Editar"
+        icon="pi pi-pencil"
+        styleClass="p-button-secondary"
+        [style]="{'margin-left': '.5em'}"
+      >
+      </p-button>
+    </ng-template>
+  </p-card>
+</a>
