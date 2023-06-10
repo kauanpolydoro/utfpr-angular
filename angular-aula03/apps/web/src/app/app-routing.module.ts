@@ -1,40 +1,48 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  RouterModule,
+  Routes,
+} from '@angular/router';
+
 import { HomeComponent } from './components/home/home.component';
 import { ListaArtigosComponent } from './components/lista-artigos/lista-artigos.component';
 
 const routes: Routes = [
   {
-    path: "",
-    pathMatch: "full",
-    redirectTo: "home",
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
   },
   {
-    path: "home",
+    path: 'home',
     component: HomeComponent,
     children: [
       {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "lista-artigos",
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'lista-artigos',
       },
       {
-        path: "lista-artigos",
+        path: 'lista-artigos',
         component: ListaArtigosComponent,
+      },
+      {
+        path: 'artigo-edicao',
+        loadChildren: () => import('./modules/artigo-edicao/artigo-edicao.module').then(m => m.ArtigoEdicaoModule),
       }
-    ]
+    ],
   },
-  {
-    path: "lista-artigos",
-    component: ListaArtigosComponent,
-  }
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     RouterModule.forRoot(routes),
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+  ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
