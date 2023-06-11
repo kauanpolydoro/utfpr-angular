@@ -1,4 +1,16 @@
+import { IArtigo } from "../interfaces/artigo";
+
 export class Artigo {
+
+  public static fromJson(iArtigo: IArtigo): Artigo {
+    return new Artigo(
+      iArtigo._id,
+      iArtigo.imagem,
+      iArtigo.titulo,
+      iArtigo.descricao,
+      iArtigo.url,
+    );
+  }
 
   /**
    * @param id Identificador único do artigo.
@@ -14,6 +26,16 @@ export class Artigo {
     public descricao: string,
     public url: string,
   ) {
+  }
+
+  public toJson(): IArtigo {
+    return {
+      _id: this.id,
+      titulo: this.titulo,
+      descricao: this.descricao,
+      imagem: this.imagem,
+      url: this.url,
+    };
   }
 
 }
