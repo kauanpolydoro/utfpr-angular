@@ -1,8 +1,8 @@
-
 use('app-artigos');
 
 db.usuarios.drop();
 
+// Insert a few documents into the sales collection.
 db.usuarios.insertMany([
     {
         '_id': 1,
@@ -13,9 +13,9 @@ db.usuarios.insertMany([
     },
     {
         '_id': 2,
-        'login': 'kauan',
-        'senha': '123',
-        'nome': 'Kauan Polydoro',
+        'login': 'rui',
+        'senha': 'professor',
+        'nome': 'Rui PImentel Leite',
         'administrador': false
     }
 ]);
